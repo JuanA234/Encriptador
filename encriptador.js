@@ -5,6 +5,7 @@ window.onload = function(){
     document.getElementById("botonE").onclick=encriptador; 
 }
 
+document.getElementById("botonC").style.display = "none";
 //Función para encriptar el texto que ingresamos
 
 function encriptador(){
@@ -35,9 +36,11 @@ function encriptador(){
         return texto;
     }).join('');
 
-        document.getElementById("encriptado").innerHTML = encriptado;
+        document.getElementById("encriptado").innerHTML = encriptado; 
         document.getElementById("muneco").style.display = "none";
-        document.getElementById("cuadro_texo").style.display = "none";  
+        document.getElementById("cuadro_texo").style.display = "none";
+        document.getElementById("botonC").style.display = "block";
+        
 }
 
 
