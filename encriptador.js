@@ -35,10 +35,9 @@ function encriptador(){
         return texto;
     }).join('');
 
-    document.getElementById("encriptado").innerHTML = encriptado;
-    document.getElementById("muneco").style.display = "none";
-    document.getElementById("cuadro_texo").style.display = "none";
-    document.getElementById("encriptador").style.display = encriptado;
+        document.getElementById("encriptado").innerHTML = encriptado;
+        document.getElementById("muneco").style.display = "none";
+        document.getElementById("cuadro_texo").style.display = "none";  
 }
 
 

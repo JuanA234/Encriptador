@@ -21,6 +21,21 @@ body{
     left: 1150px;
 }
 
+.encriptado{
+    width: 336px;
+    height: 781px;
+    position: absolute;
+    top: 42px;
+    left: 32px;
+    font-family: 'Roboto', sans-serif;;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
 .cuadro_de_texto{
     width: 336px;
     height: 122px;
@@ -71,7 +86,7 @@ textarea{
     top: 168px;
     left: 240px;
     font-family: 'Roboto', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 48px;
     letter-spacing: 0em;
