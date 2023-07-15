@@ -1,0 +1,151 @@
+body{
+    background-color: #F3F5FC;
+}
+
+.logo{
+    position: relative;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    gap: 40px;
+
+}
+
+.rectangulo{
+    width: 400px;
+    height: 759px;
+    border-radius: 32px;
+    background: #FFFFFF;
+    position: absolute;
+    top:40px;
+    left: 1150px;
+}
+
+.cuadro_de_texto{
+    width: 336px;
+    height: 122px;
+    position: relative;
+    top: 579px;
+    left: 32px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #343A40;
+
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #495057;
+}
+
+.muneco{
+    width: 336px;
+    height: 304px;
+    position: absolute;
+    top: 223px;
+    left: 32px;
+    
+}
+
+
+textarea{
+    width: 577px;
+    height: 48px;
+    position: absolute;
+    top: 168px;
+    left: 240px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0A3871;
+    background: none;
+    border: none;
+}
+
+
+
+.advertencia{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #495057;
+    opacity: 80%;
+    position: absolute;
+    width: 229px;
+    height: 18px;
+    top: 666px;
+    left: 240px;
+    gap: 8px;
+}
+
+
+.botones{
+   position: absolute;
+   top: 700px;
+   left: 240px;
+   gap: 24px;
+   display: flex;
+}
+
+.encriptar{
+    background-color: #0A3871;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border-style: none;
+    padding: 24px;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.36px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.encriptar:hover{
+    background: #3F71DC;
+}
+
+.desencriptar{
+    background-color: #D8DFE8;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    padding: 24px;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #0A3871;
+    cursor: pointer;
+}
+
+.desencriptar:hover{
+    background: #FFFFFF ;
+}

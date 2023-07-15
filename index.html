@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="encriptador.js"></script>
+    <header>
+      <img src="imagenes/Vector.png" class="logo" />
+    </header>
+    <main>
+      <textarea id="texto" rows="4" cols="50">Ingrese el texto aquí</textarea>
+      <div class="rectangulo" >
+        <img src="imagenes/Muñeco.png" class="muneco" id="muneco"/>
+        <div class="cuadro_de_texto" id="cuadro_texo">
+          <h2>Ningún mensaje fue encontrado</h2>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          <p id="encriptado"></p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="advertencia">
+        <img src="imagenes/Exclamacion.png" />
+        <label>Solo letras minúsculas y sin acentos</label>
+      </div>
+      <div class="botones">
+        <input type="submit" value="Encriptar" class="encriptar" id="botonE"/>
+        <input type="submit" value="Desencriptar" class="desencriptar" />
+      </div>
+    </footer>
+  </body>
+</html>
