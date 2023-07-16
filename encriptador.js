@@ -9,40 +9,31 @@ document.getElementById("botonC").style.display = "none";
 
 function encriptador() {
   var texto = document.getElementById("texto").value;
-  var palabras = texto.split(/(?=[a-zA-Z])/);
-  console.log(palabras);
-  var palabrasEncriptadas = palabras.map(function (palabra) {
-  
-      switch (palabra) {
-        case "a":
-          palabra = palabra.replace(/a/g, "ai");
-          break;
+  var letras = texto.split(/(?=[a-zA-Z])/);
+  var letrasEncriptadas = letras.map(function (letra) {
+    switch (letra) {
+      case "a":
+        letra = letra.replace(/a/g, "ai");
+        break;
+      case "i":
+        letra = letra.replace(/i/g, "imes");
+        break;
+      case "e":
+        letra = letra.replace(/e/g, "enter");
+        break;
 
-        case "i":
-          palabra = palabra.replace(/i/g, "imes");
-          break;
-        case "e":
-          palabra = palabra.replace(/e/g, "enter");
-          break;
+      case "o":
+        letra = letra.replace("o", "ober");
+        break;
+      case "u":
+        letra = letra.replace("u", "ufat");
+        break;
+    }
 
-        case "o":
-          palabra = palabra.replace("o", "ober");
-          break;
-
-        case "u":
-          palabra = palabra.replace("u", "ufat");
-          break;
-      }
-    
-     
-      //console.log(palabras);
-      //console.log(palabra);
-    
-   
-     return palabra;
+    return letra;
   });
 
-  var encriptado = palabrasEncriptadas.join("");
+  var encriptado = letrasEncriptadas.join("");
 
   document.getElementById("textoE/D").innerHTML = encriptado;
   document.getElementById("muneco").style.display = "none";
@@ -71,7 +62,7 @@ function desencriptador() {
   document.getElementById("botonC").style.display = "block";
 }
 
-/*
+
 
 
 
@@ -81,6 +72,4 @@ function copiar() {
     document.execCommand("copy");
   }
   
-  document.querySelector("#botonC").addEventListener("click", copiar);
-  
-*/
+
