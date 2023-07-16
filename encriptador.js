@@ -9,22 +9,40 @@ document.getElementById("botonC").style.display = "none";
 
 function encriptador() {
   var texto = document.getElementById("texto").value;
-  var palabras = texto.split(" ");
+  var palabras = texto.split(/(?=[a-zA-Z])/);
+  console.log(palabras);
   var palabrasEncriptadas = palabras.map(function (palabra) {
-    palabra = palabra.replace(/a/g, "ai");
+  
+      switch (palabra) {
+        case "a":
+          palabra = palabra.replace(/a/g, "ai");
+          break;
 
-    palabra = palabra.replace(/e/g, "enter");
+        case "i":
+          palabra = palabra.replace(/i/g, "imes");
+          break;
+        case "e":
+          palabra = palabra.replace(/e/g, "enter");
+          break;
 
-    palabra = palabra.replace(/i/g, "imes");
+        case "o":
+          palabra = palabra.replace("o", "ober");
+          break;
 
-    palabra = palabra.replace("o", "ober");
-
-    palabra = palabra.replace("u", "ufat");
-
-    return palabra;
+        case "u":
+          palabra = palabra.replace("u", "ufat");
+          break;
+      }
+    
+     
+      //console.log(palabras);
+      //console.log(palabra);
+    
+   
+     return palabra;
   });
 
-  var encriptado = palabrasEncriptadas.join(" ");
+  var encriptado = palabrasEncriptadas.join("");
 
   document.getElementById("textoE/D").innerHTML = encriptado;
   document.getElementById("muneco").style.display = "none";
