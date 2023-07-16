@@ -1,8 +1,4 @@
-navigator.clipboard
-  .readText()
-  .then(
-    (clipText) => (document.querySelector(".editor").innerText += clipText)
-  );
+
 
 document.getElementById("botonC").style.display = "none";
 //Función para encriptar el texto que ingresamos
@@ -66,10 +62,35 @@ function desencriptador() {
 
 
 
-function copiar() {
-    var copyText = document.querySelector("#textoE/D");
-    copyText.select();
-    document.execCommand("copy");
+function copiarTexto() {
+    var elemento = document.getElementById("textoE/D");
+    var texto = elemento.textContent || elemento.innerText;
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(texto)
+        .then(function() {
+        })
+        .catch(function(error) {
+          console.error("Error al copiar el texto: ", error);
+        });
+    } else {
+      var textarea = document.createElement("textarea");
+      textarea.value = texto;
+      textarea.style.position = "fixed";  // Para asegurar que esté visible aunque esté oculto
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        var copiado = document.execCommand("copy");
+        if (copiado) {
+          alert("Texto copiado: " + texto);
+        } else {
+          throw new Error("No se pudo copiar el texto");
+        }
+      } catch (error) {
+        console.error("Error al copiar el texto: ", error);
+      }
+      document.body.removeChild(textarea);
+    }
   }
-  
 
