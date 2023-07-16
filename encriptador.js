@@ -1,42 +1,63 @@
 
 
+navigator.clipboard
+  .readText()
+  .then(
+    (clipText) => (document.querySelector(".editor").innerText += clipText),
+  );
 
-window.onload = function(){
-    document.getElementById("botonE").onclick=encriptador; 
-}
 
 document.getElementById("botonC").style.display = "none";
 //Función para encriptar el texto que ingresamos
 
 function encriptador(){
     var texto = document.getElementById("texto").value;
-    var encriptado = [].map.call(texto,function(texto){
-        for(let i = 0; i<texto.length; i++){
-            switch(texto[i]){
+    var palabras = texto.split(" ");
+    var palabrasEncriptadas = palabras.map(function(palabra){
+        for(let i=0; i<palabras.length; i++){
+            if(palabra[i]=='a'){
+                palabra = palabra.replace(/a/g, "ai");
+            }else if(palabra[i]=='e'){
+                palabra = palabra.replace(/e/g, "enter");
+            }else if(palabra[i]=='i'){
+                palabra = palabra.replace(/i/g, "imes");
+            }
+            else if(palabra[i]=='o'){
+                palabra = palabra.replace("o", "ober"); 
+            }
+            else if(palabra[i]=='u'){
+                palabra = palabra.replace("u", "ufat"); 
+            }
+    
+            /*
+            switch(palabra[i]){
                 case 'a':
-                    texto = texto.replaceAll("a", "ai");
                     break;
                 case 'e':
-                    texto = texto.replaceAll("e", "enter");
-                    break;
+                    palabra = palabra.replaceAll(/e/g, "enter");
                 case 'i':
-                    texto = texto.replaceAll("i", "imes");
+                    palabra = palabra.replaceAll(/i/g, "imes");
                     break;
                 case 'o':
-                    texto = texto.replaceAll("o", "ober");
+                    palabra = palabra.replaceAll("o", "ober");
                     break;
                 case 'u':
-                    texto = texto.replaceAll("u", "ufat");
+                    palabra = palabra.replaceAll("u", "ufat");
                     break;
                 default:
                     break;  
             }
-            break;
-        }
-        return texto;
-    }).join('');
+            */
 
-        document.getElementById("encriptado").innerHTML = encriptado; 
+        }
+
+        
+        return palabra;
+    });
+
+        var encriptado = palabrasEncriptadas.join(" ");
+
+        document.getElementById("textoE/D").innerHTML = encriptado; 
         document.getElementById("muneco").style.display = "none";
         document.getElementById("cuadro_texo").style.display = "none";
         document.getElementById("botonC").style.display = "block";
@@ -45,38 +66,38 @@ function encriptador(){
 
 
 
-function desencriptador(texto){
-    var desencriptado = [].map.call(texto,function(x){
-        for(let i = 0; i<texto.length; i++){
-            switch(texto[i]){
-                case 'a':
-                    x = texto.replaceAll("ai", "a");
-                    break;
-                case 'e':
-                    x = texto.replaceAll("enter", "e");
-                    break;
-                case 'i':
-                    x = texto.replaceAll("imes", "i");
-                    break;
-                case 'o':
-                    x = texto.replaceAll("ober", "o");
-                    break;
-                case 'u':
-                    x = texto.replaceAll("ufat", "u");
-                    break;
-                default:
-                    break;  
-            }
-            break;
-        }
-    
-        return x;
-    }).join('');
-    return desencriptado; 
+//función para desencriptar el texto que ingresamos
+function desencriptador(){
+    var texto = document.getElementById("texto").value;
+    var palabras = texto.split(" ");
+    var palabrasDesencriptadas = palabras.map(function(palabra){
+        palabra = palabra.replaceAll(/ai/g, "a");
+        palabra = palabra.replaceAll(/enter/g, "e");
+        palabra = palabra.replaceAll(/imes/g, "i");
+        palabra = palabra.replaceAll(/ober/g, "o");
+        palabra = palabra.replaceAll(/ufat/g, "u");
+      
+        return palabra;
+    });
+
+    var desencriptado = palabrasDesencriptadas.join(" ");
+    document.getElementById("textoE/D").innerHTML = desencriptado; 
+    document.getElementById("muneco").style.display = "none";
+    document.getElementById("cuadro_texo").style.display = "none";
+    document.getElementById("botonC").style.display = "block";
 }
 
+/*
 
 
 
-
+function copiar() {
+    var copyText = document.querySelector("#textoE/D");
+    copyText.select();
+    document.execCommand("copy");
+  }
+  
+  document.querySelector("#botonC").addEventListener("click", copiar);
+  
+*/
 

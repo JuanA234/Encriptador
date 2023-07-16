@@ -21,7 +21,8 @@ body{
     left: 1150px;
 }
 
-.encriptado{
+.encriptado_desencriptado{
+    border: none;
     width: 336px;
     height: 781px;
     position: absolute;
@@ -188,6 +189,5 @@ textarea{
 }
 
 .copiar:hover{
-    background: #EAEBEB 
-    ;
+    background: #EAEBEB;
 }

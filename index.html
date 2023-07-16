@@ -22,13 +22,13 @@
     <main>
       <textarea id="texto" rows="4" cols="50">Ingrese el texto aquí</textarea>
       <div class="rectangulo" >
-        <p id="encriptado" class="encriptado"></p>
+        <p id="textoE/D" class="encriptado_desencriptado"></p>
         <img src="imagenes/Muñeco.png" class="muneco" id="muneco"/>
         <div class="cuadro_de_texto" id="cuadro_texo">
           <h2>Ningún mensaje fue encontrado</h2>
           <p>Ingresa el texto que desees encriptar o desencriptar.</p>
         </div>
-        <input style="display: none;" id="botonC" type="submit" value="Copiar" class="copiar" />
+        <button style="display: none;" id="botonC" type="submit"class="copiar" >copiar</button>
       </div>
     </main>
     <footer>
@@ -37,8 +37,8 @@
         <label>Solo letras minúsculas y sin acentos</label>
       </div>
       <div class="botones">
-        <input type="submit" value="Encriptar" class="encriptar" id="botonE"/>
-        <input type="submit" value="Desencriptar" class="desencriptar" />
+        <input type="submit" value="Encriptar" class="encriptar"  onclick="encriptador()"/>
+        <input type="submit" value="Desencriptar" class="desencriptar" onclick="desencriptador()" />
       </div>
     </footer>
   </body>
